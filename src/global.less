@@ -1,0 +1,334 @@
+@import '~ant-design-vue/es/style/themes/default.less';
+@import './utils/utils.less';
+
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #bdbdbd;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+html,
+body,
+#app,
+#root {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+iframe {
+  border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p {
+  // margin: 0 !important
+  margin: 0;
+  margin-bottom: 0 !important;
+}
+
+canvas {
+  display: block;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout.layout-basic {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+// 数据列表 样式
+.table-alert {
+  margin-bottom: 16px;
+}
+
+// 数据列表 操作
+.table-operator {
+  margin-bottom: 18px;
+
+  .search-btn {
+    margin-right: 8px;
+  }
+}
+
+// 数据列表 搜索条件
+.table-page-search-wrapper {
+
+  .ant-form-inline {
+    .ant-form-item {
+      display: flex;
+      margin-bottom: 24px;
+      margin-right: 0;
+
+      .ant-form-item-control-wrapper {
+        flex: 1 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      >.ant-form-item-label {
+        line-height: 32px;
+        padding-right: 8px;
+        width: auto;
+      }
+
+      .ant-form-item-control {
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  .table-page-search-submitButtons {
+    display: block;
+    margin-bottom: 24px;
+    white-space: nowrap;
+  }
+}
+
+// 内容页card组件标题
+.card-title {
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead>tr,
+    &-tbody>tr {
+
+      >th,
+      >td {
+        white-space: pre;
+
+        >span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// 图标按钮样式
+.ant-btn>.anticon+span,
+.ant-btn>span+.anticon {
+  margin-left: 5px;
+}
+
+// 表单
+.ant-form {
+
+  .ant-form-explain,
+  .ant-form-extra {
+    font-size: 12.5px;
+  }
+
+  .form-item-help {
+    font-size: 12px;
+    // line-height: 2;
+    line-height: 1.5;
+    padding-top: 4px;
+    min-height: 22px;
+    // margin-top: -2px;
+    transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    a {
+      margin: 0 3px;
+    }
+
+    .extra,
+    small {
+      color: rgba(0, 0, 0, 0.45);
+      font-size: 12.5px !important;
+    }
+
+    .extra {
+      margin-bottom: 4px !important;
+    }
+  }
+}
+
+// 级联选择器
+.ant-cascader-menu {
+  height: 225px;
+}
+
+// 分割线
+.ant-divider {
+  margin: 30px 0 !important;
+
+  .ant-divider-inner-text {
+    font-size: @font-size-base;
+    color: rgba(0, 0, 0, 0.61);
+  }
+}
+
+.ant-divider-horizontal.ant-divider-with-text-left::before {
+  width: 5%;
+}
+
+//# 兼容外部样式
+
+// ueditor
+.edui-default {
+  .edui-editor {
+    // z-index: 2 !important;
+    font-size: 14px;
+    line-height: normal;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+
+    pre {
+      overflow: unset;
+    }
+  }
+
+  .edui-editor-toolbarboxouter {
+    box-shadow: unset;
+    background-image: linear-gradient(to bottom, #ffffff, #fbfbfb);
+  }
+
+  .edui-editor-toolbarbox {
+    box-shadow: unset;
+  }
+
+  // 自定义图片按钮
+  .edui-for-image-button .edui-icon {
+    background-position: -380px 0px;
+  }
+}
+
+
+
+// ## 自定义模块 ##
+.ant-table {
+
+  // 操作栏 项目间距
+  .actions>a {
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// 搜索表单
+.search-form {
+  margin-bottom: 5px;
+
+  .ant-form-item {
+    margin-bottom: 10px;
+  }
+
+  .ant-form-item-control-wrapper {
+    min-width: 220px;
+  }
+
+  .search-btn {
+    .ant-form-item-control-wrapper {
+      width: auto;
+      min-width: auto;
+    }
+  }
+
+}
+
+// 列表页-操作按钮组
+.row-item-tab {
+  &>button {
+    margin-right: 5px;
+  }
+}
+
+// 无边框的modal
+.ant-modal-root {
+  &.noborder {
+    .ant-modal-header {
+      border-bottom: none;
+    }
+
+    .ant-modal-footer {
+      border-top: none;
+    }
+
+    .ant-modal-body {
+      padding: 5px 24px 15px 24px;
+    }
+
+  }
+}
+
+// 表格不允许换行
+.ant-table {
+
+  td,
+  th {
+    white-space: nowrap;
+  }
+
+}
+
+// Alert 警告提示 (banner)
+.ant-alert-banner {
+  margin-bottom: 15px;
+  padding-left: 40px;
+
+  .ant-alert-message {
+    font-size: @font-size-base;
+  }
+
+  // 黄色警告
+  &.ant-alert-warning {
+    background-color: #fffcee;
+    border: 1px solid #fff0c1;
+  }
+
+  // 标题+描述
+  &.ant-alert-with-description {
+    padding-left: 55px;
+
+    .ant-alert-icon {
+      font-size: 18px;
+      top: 16px;
+      left: 25px;
+    }
+
+    .ant-alert-message {
+      font-size: @font-size-base;
+      margin-bottom: 6px;
+    }
+
+    .ant-alert-description {
+      font-size: 12.3px;
+    }
+  }
+
+}
+
+span.ant-radio+* {
+  color: rgba(0, 0, 0, .5)
+}
